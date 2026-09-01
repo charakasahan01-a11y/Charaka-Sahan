@@ -34,52 +34,58 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32">
+      <section className="relative pt-32 pb-8 lg:pt-40 lg:pb-12">
         <div className="absolute top-20 right-20 w-64 h-64 border border-[#2D241E]/10 rounded-full pointer-events-none"></div>
         <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-orange-600/5 rounded-full pointer-events-none"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-16 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-row gap-4 sm:gap-8 lg:gap-16 items-center justify-between">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex-1"
+            className="flex-1 max-w-[55%] lg:max-w-none"
           >
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[#2D241E]/10 text-[#2D241E] font-bold mb-8 text-[10px] uppercase tracking-[0.2em]">
-              <Flame size={14} className="text-orange-600" />
-              දර ළිපේ ඉඳුනු නියම ගමේ රහ
+            <div className="inline-flex items-center gap-1.5 lg:gap-3 px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-[#2D241E]/10 text-[#2D241E] font-bold mb-4 lg:mb-8 text-[8px] lg:text-[10px] uppercase tracking-[0.2em]">
+              <Flame size={12} className="text-orange-600 shrink-0 hidden sm:block" />
+              <span className="truncate leading-tight">දර ළිපේ ඉඳුනු නියම ගමේ රහ</span>
             </div>
-            <h1 className="text-6xl lg:text-[5.5rem] font-serif font-black text-[#2D241E] leading-[0.85] mb-8">
+            <h1 className="text-[1.5rem] leading-[1.1] sm:text-4xl lg:text-[5.5rem] font-serif font-black text-[#2D241E] lg:leading-[0.85] mb-4 lg:mb-8">
               හරියට අම්මා ඉව්වා වගේ...<br/>
-              <span className="text-orange-600">මැටි හට්ටියේ</span><br/>රස්නෙන්.
+              <span className="text-orange-600">මැටි හට්ටියේ</span><br className="hidden lg:block"/> රස්නෙන්.
             </h1>
-            <p className="text-xl text-[#2D241E]/80 mb-10 leading-relaxed max-w-lg font-medium">
+            <p className="text-[10px] leading-relaxed sm:text-sm lg:text-xl text-[#2D241E]/80 mb-5 lg:mb-10 lg:leading-relaxed max-w-lg font-medium">
               කෘතිම රසකාරක කිසිවක් නොමැතිව, පිරිසිදු පොල් තෙල් සහ දේශීය කුළුබඩු යොදාගෙන ආදරයෙන් හදන අපේ කෑම වේලක් රස බලන්න එන්න.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#menu" className="inline-flex justify-center items-center px-8 py-4 text-sm uppercase tracking-widest font-black rounded-[4px_24px_4px_24px] text-[#FDF8F1] bg-[#2D241E] hover:bg-orange-600 transition-all hover:-translate-y-0.5">
+            <div className="flex flex-col lg:flex-row gap-2 lg:gap-4">
+              <a href="#menu" className="inline-flex justify-center items-center px-4 py-2.5 lg:px-8 lg:py-4 text-[9px] lg:text-sm uppercase tracking-widest font-black rounded-[4px_16px_4px_16px] lg:rounded-[4px_24px_4px_24px] text-[#FDF8F1] bg-[#2D241E] hover:bg-orange-600 transition-all hover:-translate-y-0.5 text-center">
                 කෑම මෙනුව
               </a>
-              <a href="tel:0712345678" className="inline-flex justify-center items-center px-8 py-4 text-sm uppercase tracking-widest font-black rounded-full text-[#2D241E] bg-transparent border border-[#2D241E]/20 hover:border-[#2D241E] transition-all">
-                <Phone size={16} className="mr-2" />
+              <a href="tel:0712345678" className="inline-flex justify-center items-center px-4 py-2.5 lg:px-8 lg:py-4 text-[9px] lg:text-sm uppercase tracking-widest font-black rounded-full text-[#2D241E] bg-transparent border border-[#2D241E]/20 hover:border-[#2D241E] transition-all text-center">
+                <Phone size={12} className="mr-1.5 lg:mr-2 shrink-0 hidden sm:block" />
                 කතා කරන්න
               </a>
             </div>
           </motion.div>
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-1 w-full"
+            initial={{ opacity: 0, scale: 0.95, y: 0 }}
+            animate={{ opacity: 1, scale: 1, y: [-10, 10, -10] }}
+            transition={{ 
+              opacity: { duration: 0.8, delay: 0.2 },
+              scale: { duration: 0.8, delay: 0.2 },
+              y: { repeat: Infinity, duration: 6, ease: "easeInOut" }
+            }}
+            className="flex-1 w-full max-w-[45%] lg:max-w-none"
           >
-            <div className="relative aspect-[4/5] bg-[#E8DCCA] rounded-[80px_4px_80px_4px] overflow-hidden group">
-              <img 
+            <div className="relative aspect-[4/5] bg-[#E8DCCA] rounded-[40px_4px_40px_4px] lg:rounded-[80px_4px_80px_4px] overflow-hidden group shadow-xl shadow-orange-900/5">
+              <motion.img 
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShY_L7UV9dA9VHTe1EB0MHAlUb7KTthL4xc6--OtmOj6JzPkd_f2CAccg&s=10" 
                 alt="Sri Lankan Spices" 
-                className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-1000"
+                className="w-full h-full object-cover opacity-90"
               />
-              <div className="absolute inset-0 flex items-center justify-center p-12 pointer-events-none mix-blend-overlay">
-                <div className="text-[#2D241E] text-[12rem] font-black font-serif opacity-30">බත්</div>
+              <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-12 pointer-events-none mix-blend-overlay">
+                <div className="text-[#2D241E] text-[5rem] lg:text-[12rem] font-black font-serif opacity-30">බත්</div>
               </div>
             </div>
           </motion.div>
@@ -87,7 +93,7 @@ export default function App() {
       </section>
 
       {/* Features */}
-      <section id="about" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <section id="about" className="py-8 lg:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -145,7 +151,7 @@ export default function App() {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <section id="menu" className="py-8 lg:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="absolute top-40 -left-20 w-64 h-64 border border-[#2D241E]/10 rounded-full pointer-events-none"></div>
         
         <div className="mb-16 flex flex-col md:flex-row justify-between items-end gap-8 relative z-10">
@@ -264,7 +270,7 @@ export default function App() {
       </section>
 
       {/* Info / Call to action */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-8 lg:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-orange-600 rounded-[80px_4px_80px_4px] p-12 md:p-24 text-center relative overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center opacity-[0.07] pointer-events-none">
             <div className="text-[#2D241E] text-[15rem] md:text-[25rem] font-serif font-black">බත්</div>
@@ -290,7 +296,7 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-[#2D241E] text-[#FDF8F1] py-24 relative overflow-hidden">
+      <footer id="contact" className="bg-[#2D241E] text-[#FDF8F1] pt-16 pb-12 lg:pt-20 lg:pb-12 relative overflow-hidden">
         <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-orange-600/10 rounded-full pointer-events-none"></div>
         <div className="absolute top-20 right-40 w-32 h-32 border border-[#FDF8F1]/5 rounded-full pointer-events-none"></div>
         
