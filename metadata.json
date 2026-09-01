@@ -1,0 +1,6 @@
+{
+  "name": "ගමේ රස බත් කඩේ",
+  "description": "නියම ශ්‍රී ලාංකික ගමේ රහට බත් සහ කරි - Authentic Sri Lankan Rice and Curry",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
